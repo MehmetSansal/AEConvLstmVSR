@@ -1,0 +1,44 @@
+hardware:
+  device: "cuda"
+  cudnn_benchmark: true        # Ada 6000: fixed input size, benchmark helps
+  cudnn_deterministic: false   # disabled for speed on Ada Lovelace
+
+data:
+  train_manifest: "./data/vimeo_prepared/train_manifest.csv"
+  test_manifest:  "./data/vimeo_prepared/test_manifest.csv"
+  scale: 4
+  patch_size: 256              # HR crop; LR = 64×64
+  num_workers: 16              # Ada 6000 workstation has many CPU cores
+  prefetch_factor: 4
+  pin_memory: true
+
+model:
+  feature_channels: 64
+  hidden_channels: 64
+  num_residual_blocks: 4
+  attention_ratio: 4
+  use_alignment: true
+  use_attention: true
+  use_convlstm: true
+
+train:
+  batch_size: 32               # 48 GB VRAM, patch_size=256, bfloat16
+  num_epochs: 100
+  lr: 2.0e-4
+  lr_min: 1.0e-6
+  weight_decay: 1.0e-4
+  grad_clip: 1.0
+  warmup_epochs: 5             # linear LR warmup before cosine decay
+
+loss:
+  l1_weight: 1.0
+  edge_weight: 0.1
+
+logging:
+  save_every: 5
+  eval_every: 1
+  log_every: 50
+  checkpoint_dir: "./checkpoints"
+  results_dir:    "./results"
+  log_dir:        "./logs"
+  use_tensorboard: true

@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# PyTorch checkpoints (large binary files — use GitHub Releases or HuggingFace)
+checkpoints/baselines/
+checkpoints/epoch_0005.pth
+checkpoints/epoch_0010.pth
+checkpoints/epoch_0015.pth
+checkpoints/epoch_0020.pth
+checkpoints/epoch_0025.pth
+checkpoints/epoch_0030.pth
+checkpoints/epoch_0035.pth
+checkpoints/epoch_0040.pth
+checkpoints/epoch_0045.pth
+checkpoints/epoch_0050.pth
+checkpoints/epoch_0055.pth
+checkpoints/epoch_0060.pth
+checkpoints/epoch_0065.pth
+checkpoints/epoch_0070.pth
+checkpoints/epoch_0075.pth
+checkpoints/epoch_0080.pth
+checkpoints/epoch_0085.pth
+checkpoints/epoch_0090.pth
+checkpoints/epoch_0095.pth
+checkpoints/epoch_0100.pth
+checkpoints/latest.pth
+# Dataset (download Vimeo-90K separately and run scripts/prepare_dataset.py)
+data/vimeo_prepared/
+
+# Training / evaluation outputs
+logs/
+results/
+
+# Videos used for data preparation with video_crop_tool.py
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
