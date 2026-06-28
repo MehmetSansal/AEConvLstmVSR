@@ -270,9 +270,6 @@ Implementations in `models/baseline_models.py` are faithful re-implementations t
 
 ---
 
-> **MMI711 — Sequence Models in Multimedia**  
-> I gratefully thank **Assoc. Prof. Erdem Akagündüz** for his guidance throughout this course.
-
 ## License
 
 MIT
